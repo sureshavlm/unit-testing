@@ -1,0 +1,27 @@
+<div class="container">
+
+	<h1>Sign-In</h1>
+
+	<p id="invalid-login" class="alert alert-success" *ngIf="status">{{status}}</p>
+
+	<div class="row">
+		<div class="col-md-12">
+			Username:
+			<input type="text" name="username">
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-12">
+			Password:
+			<input type="text" name="password">
+		</div>
+	</div>
+
+	<label>Email: <input type="text" name="email"></label>
+
+	<div class="row">
+		<div class="col-md-12">
+			<button (click)="validateLogin()">Login</button>
+		</div>
+	</div>
+</div>

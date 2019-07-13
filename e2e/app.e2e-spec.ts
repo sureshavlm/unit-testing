@@ -1,14 +1,23 @@
-import { AppPage } from './app.po';
+import { browser } from 'protractor';
 
-describe('unit-test-example App', () => {
-  let page: AppPage;
+import { LoginTestCase } from './login.test.po';
 
-  beforeEach(() => {
-    page = new AppPage();
-  });
 
-  it('should display welcome message', () => {
-    page.navigateTo();
-    expect(page.getParagraphText()).toEqual('Welcome to app!');
-  });
+describe('Demo App', () => {
+
+	let login: LoginTestCase;
+
+	beforeEach(() => {
+		login = new LoginTestCase();
+	});
+
+	it('login test', () => {
+
+		login.launchApp(); //load app into browser
+
+		expect(login.doLogin()).toEqual('Login Success!');
+
+		browser.sleep(2000);
+	});
+
 });
